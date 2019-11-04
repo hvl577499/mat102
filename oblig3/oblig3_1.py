@@ -9,12 +9,12 @@ import scipy.io
 import regression
 
 # Endre denne tilbake til bare arbeidskrav3.mat
-data = scipy.io.loadmat("/Users/torilapelthun/Documents/HVL/mat102/oblig3/oblig3/arbeidskrav3.mat")
+data = scipy.io.loadmat("/Users/torilapelthun/Documents/HVL/mat102/oblig3/arbeidskrav3.mat")
 x = np.array(data['x']).astype(float).reshape(11)
 y = np.array(data['y']).astype(float).reshape(11)
 omega = data["omega"][0][0].astype(float)
 
-# 1a
+# 1a - Se 1a.png for figur
 # Linear regression
 [a,b] = regression.linearRegression(x,y)
 plt.figure(0)
@@ -46,14 +46,14 @@ print('Linear coefficient of determination: ', r2Linear) # 0.00322
 print('Quadratic coefficient of determination: ', r2Quadratic) # 0.274
 print('Cubic coefficient of determination: ', r2Cubic) # 0.686
 
-# Determinasjonskoeffisienten skal være et tall mellom 0 og 1, og dess nærmere
-# den er 1 dess bedre vil modellen stemme med punktene fra input-dataen.
+# Determinasjonskoeffisienten skal være et tall mellom 0 og 1, og jo nærmere
+# den er 1 jo bedre vil modellen stemme med punktene fra input-dataen.
 # Her vil da den kubiske modellen være den modellen som er best egnet, etterfulgt
 # av kvadartisk og lineær er minst egnet.
 # Vi kan òg se dette på grafen som kommer opp når vi kjører koden.
 
 
-# 1c - Sinusoid Regression
+# 1c - Sinusoid Regression - Se 1c.png for figur
 [a0,a1,b1] = regression.sinusoidRegression(x,y, omega)
 plt.scatter(x,y)
 xplot = np.linspace(-2,12)
@@ -64,11 +64,11 @@ SSESinus = sum((y-(a0+a1*np.cos(np.multiply(2*np.pi/omega,x))+b1*np.sin(np.multi
 r2Sinus =(Sy2-SSESinus)/Sy2
 print('Sinusoid coefficient of determination: ', r2Sinus) # 0.945
 
+plt.show()
+
 # Dette er defintivit den beste modellen for målingene våre.
-# Den har en Determinasjonskoeffisient på 0.945, noe som er veldig nærme 1.
+# Den har en determinasjonskoeffisient på 0.945, noe som er veldig nærme 1.
 # Dette kan vi òg se når vi kjører koden og får opp modellen.
 
 # 1d - X-verdi
-
-
-plt.show()
+#
