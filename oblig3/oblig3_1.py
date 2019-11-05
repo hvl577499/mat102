@@ -71,4 +71,9 @@ plt.show()
 # Dette kan vi òg se når vi kjører koden og får opp modellen.
 
 # 1d - X-verdi
-#
+# Jeg kunne tenke meg en veldig høy x-verdi, som f.eks. 10 000. Da vil plasseringen
+# i y-retningen forhåpentligvis fortelle hvilken modell som er best. Dersom den det
+# er den kvadratiske som er best, vil y-verdien være positiv og svært høy. Dersom
+# den kubiske er best vil y-verdien være svært lav og negativ. Den sinusoidale ville
+# være vanskelig å skille basert på dette punktet, men vi ser jo allerede at den
+# er mye bedre til punktene enn den lineære.

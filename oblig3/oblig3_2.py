@@ -15,10 +15,9 @@ X2 = np.array(data['X2'])
 # 2a:
 X1 = pca.meanCenter(X1) # Preprosessering av matrisen. Gjennomsnitt = 0 i hver søyle/kolonne.
 X1 = pca.standardize(X1) # Preprossesering av matrisen. standardavvik = 1 i hver søyle/kolonne.
-objNames1 = data['objNames1']
-varNames1 = data['varNames1']
-objNames2 = data['objNames2']
-varNames2 = data['varNames2']
+
+objNames1 = data['objNames1'] # Navn på pkt i scoreplot ['1:Milk+','2','3:Sugar','4','5a','5b','6','7:Cocoa+']
+varNames1 = data['varNames1'] # Navn på pkt i loadingsplot ['%COCOA','%SUGAR','%MILK','COLOUR(L)','VISCOSITY/10','colour','cocoa-odour','smooth-txtr','milk-taste','sweet']
 
 # 2b:
 # Vi bruker PCA til å beskrive varians i datasettet vårt, og derfor er det
@@ -28,9 +27,6 @@ varNames2 = data['varNames2']
 
 # 2c
 [T, P, E] = pca.pca(X1, a=2) # Setter a=2 fordi vi skal ha de to første prinsipalkomponentene
-
-punktnavn = ['1:Milk+','2','3:Sugar','4','5a','5b','6','7:Cocoa+'] # Navn på punktene i score plot
-pktnavn = ['%COCOA','%SUGAR','%MILK','COLOUR(L)','VISCOSITY/10','colour','cocoa-odour','smooth-txtr','milk-taste','sweet'] # Navn på punktene i loading plot
 
 # 2c: Score plot
 plt.figure(0)
@@ -70,6 +66,12 @@ ax.scatter(T[:,0],T[:,1])
 ax.scatter(P[:,0],P[:,1])
 
 # Minst en kommentar til dataene basert på plottingen og analysen
-#
+# 2f: Kommentar:
+# Vi ser at innstillingene for ekstra melk(1) og for ekstra(3) sukker ligger til
+# venstre i score plot. Både melkesmak og søthet ligger til venstre i loading plot,
+# det samme gjør fysisk målt sukker- og melkeinnhold.
+# Instillingene for ekstra melk og sukker ligger i biplottet til venstre for de
+# målte punktene for melk og sukker, noe som forteller oss at ekstra sukker gir
+# en søtere smak og at ekstra melk smaker mer melk.
 
 plt.show()
