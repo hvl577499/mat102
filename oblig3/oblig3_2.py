@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+# Oblig 3, oppg 2 - Toril Sunde Apelthun og Martin Fløysand
+
 from __future__ import division
 import pca
 import scipy.io
@@ -6,9 +9,8 @@ import numpy as np
 import scipy.linalg as sl
 import matplotlib.pyplot as plt
 import pylab
-# import panda as pd
 
-data = scipy.io.loadmat("/Users/torilapelthun/Documents/HVL/mat102/oblig3/arbeidskrav3.mat")
+data = scipy.io.loadmat("Arbeidskrav3.mat")
 X1 = np.array(data['X1'])
 X2 = np.array(data['X2'])
 
@@ -65,8 +67,8 @@ ax = pylab.subplot(111)
 ax.scatter(T[:,0],T[:,1])
 ax.scatter(P[:,0],P[:,1])
 
-# Minst en kommentar til dataene basert på plottingen og analysen
-# 2f: Kommentar:
+
+# 2f:
 # Vi ser at innstillingene for ekstra melk(1) og for ekstra(3) sukker ligger til
 # venstre i score plot. Både melkesmak og søthet ligger til venstre i loading plot,
 # det samme gjør fysisk målt sukker- og melkeinnhold.

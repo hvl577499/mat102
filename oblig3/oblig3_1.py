@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Oblig 3 - Toril Sunde Apelthun
+# Oblig 3, oppg 1 - Toril Sunde Apelthun og Martin Fløysand
 
 from __future__ import division
 import numpy as np
@@ -8,8 +8,7 @@ import matplotlib.pyplot as plt
 import scipy.io
 import regression
 
-# Endre denne tilbake til bare arbeidskrav3.mat
-data = scipy.io.loadmat("/Users/torilapelthun/Documents/HVL/mat102/oblig3/arbeidskrav3.mat")
+data = scipy.io.loadmat("Arbeidskrav3.mat")
 x = np.array(data['x']).astype(float).reshape(11)
 y = np.array(data['y']).astype(float).reshape(11)
 omega = data["omega"][0][0].astype(float)
